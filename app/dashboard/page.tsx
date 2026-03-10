@@ -110,7 +110,7 @@ export default async function DashboardPage() {
           <div className="mb-10 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
             <StatCard 
               title="Total Interactions" 
-              value={totalLifts.toLocaleString()} 
+              value={<span suppressHydrationWarning>{totalLifts.toLocaleString()}</span>} 
               description="Total lifts detected across all units" 
               icon={<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />}
               trend="+12.5%"
@@ -118,21 +118,21 @@ export default async function DashboardPage() {
             />
             <StatCard 
               title="Unique Contents" 
-              value={uniqueContents.toLocaleString()} 
+              value={<span suppressHydrationWarning>{uniqueContents.toLocaleString()}</span>} 
               description="Active library items in circulation" 
               icon={<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />}
               color="indigo"
             />
             <StatCard 
               title="Active Locations" 
-              value={uniqueStores.toLocaleString()} 
+              value={<span suppressHydrationWarning>{uniqueStores.toLocaleString()}</span>} 
               description="Total store locations monitored" 
               icon={<><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></>}
               color="cyan"
             />
             <StatCard 
               title="Monitored Screens" 
-              value={uniqueScreens.toLocaleString()} 
+              value={<span suppressHydrationWarning>{uniqueScreens.toLocaleString()}</span>} 
               description="Individual kiosk units connected" 
               icon={<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />}
               color="sky"
@@ -232,7 +232,7 @@ export default async function DashboardPage() {
             )}
             <div className="border-t border-slate-100 bg-white px-6 py-4 text-xs text-slate-500 flex justify-between">
               <span>Showing {data.length} interaction loops</span>
-              <span>Last synced: {new Date().toLocaleTimeString()}</span>
+              <span suppressHydrationWarning>Last synced: {new Date().toLocaleTimeString()}</span>
             </div>
           </div>
         </div>
@@ -243,7 +243,7 @@ export default async function DashboardPage() {
 
 function StatCard({ title, value, description, icon, trend, color }: { 
   title: string; 
-  value: string; 
+  value: string | React.ReactNode; 
   description: string; 
   icon: React.ReactNode; 
   trend?: string;
