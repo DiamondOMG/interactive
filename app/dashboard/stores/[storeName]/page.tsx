@@ -1,4 +1,3 @@
-import React from 'react';
 import StoreDetailClient from './StoreDetailClient';
 import Link from 'next/link';
 import { ShieldCheck, LayoutDashboard, BarChart3, Settings } from 'lucide-react';
