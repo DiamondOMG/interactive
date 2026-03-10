@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState } from "react";
+import Link from "next/link";
 
 // Define types for the API response
 interface DisplayCounts {
@@ -127,16 +127,36 @@ function StatCard({
   );
 }
 
-export default function DashboardClient({ initialData }: { initialData: LiftData[] }) {
+export default function DashboardClient({
+  initialData,
+}: {
+  initialData: LiftData[];
+}) {
   const [selectedSection, setSelectedSection] = useState("all");
 
   // Filter data based on selected section
+  function hasAllFields(item: LiftData) {
+    return (
+      item.Total?.toString().trim() !== "" &&
+      item.libraryItemLabel?.toString().trim() !== "" &&
+      item.screenLabel?.toString().trim() !== "" &&
+      item.storeLocation?.toString().trim() !== "" &&
+      item.itemId?.toString().trim() !== "" &&
+      item.screenId?.toString().trim() !== "" &&
+      item.libraryItemId?.toString().trim() !== ""
+    );
+  }
+
   const filteredData = initialData.filter((item) => {
-    if (selectedSection === "all") return true;
+    // section match
+    let sectionMatch = true;
     if (selectedSection === "main_area")
-      return !item.storeSection || item.storeSection === "";
-    if (selectedSection === "shelf") return item.storeSection === "Shelf";
-    return true;
+      sectionMatch = !item.storeSection || item.storeSection === "";
+    if (selectedSection === "shelf")
+      sectionMatch = item.storeSection === "Shelf";
+
+    // only include rows where all required fields are present
+    return sectionMatch && hasAllFields(item);
   });
 
   // Calculations for Summary
@@ -144,9 +164,11 @@ export default function DashboardClient({ initialData }: { initialData: LiftData
     (acc, curr) => acc + parseInt(curr.Total || "0"),
     0,
   );
-  const uniqueContents = new Set(filteredData.map((item) => item.libraryItemLabel))
+  const uniqueContents = new Set(
+    filteredData.map((item) => item.libraryItemLabel),
+  ).size;
+  const uniqueStores = new Set(filteredData.map((item) => item.storeLocation))
     .size;
-  const uniqueStores = new Set(filteredData.map((item) => item.storeLocation)).size;
   const uniqueScreens = new Set(filteredData.map((item) => item.screenId)).size;
 
   return (
