@@ -1,7 +1,7 @@
 [
   {
     "Total": "28",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "Verify identity - 1080x1920.jpg",
     "screenLabel": "Test kiosk CDG",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -15,7 +15,7 @@
   },
   {
     "Total": "30",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "Turbo - 1080x1920.jpg",
     "screenLabel": "Test kiosk CDG",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -29,7 +29,7 @@
   },
   {
     "Total": "29",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "Thunder - 1080x1080 copy.jpg",
     "screenLabel": "Test kiosk CDG",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -43,7 +43,7 @@
   },
   {
     "Total": "17",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "SmartSwift - 1080x1920.jpg",
     "screenLabel": "Test kiosk CDG",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -57,7 +57,7 @@
   },
   {
     "Total": "18",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "Promotion 0% - 1080x1920.jpg",
     "screenLabel": "Test kiosk CDG",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -71,7 +71,7 @@
   },
   {
     "Total": "77",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Ensure BigC Cy8.5",
     "libraryItem.label": "Nivea - 1920x158 - 1.mp4",
     "screenLabel": "23\" Shelf Strip",
     "screen.storeLocation": "BigC 30 + 3 สาขา",
@@ -85,7 +85,7 @@
   },
   {
     "Total": "17",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "GoodMoney - 1080x1920.jpg",
     "screenLabel": "Test kiosk CDG",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -99,7 +99,7 @@
   },
   {
     "Total": "17",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "Finnix - 1080x1920.jpg",
     "screenLabel": "Test kiosk CDG",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -113,7 +113,7 @@
   },
   {
     "Total": "24",
-    "screen.screen_name": "detol",
+    "screen.ProjectName": "Project2026 Supplier Day",
     "libraryItem.label": "Dettol_Proskin_03.mp4",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "TopsDigital-Chaengwattana",
@@ -127,10 +127,10 @@
   },
   {
     "Total": "32",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2026 Supplier Day",
     "libraryItem.label": "Dettol_Proskin_03.mp4",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
-    "screen.storeLocation": "BigC 50 + 5 สาขา",
+    "screen.storeLocation": "TopsDigital-Chaengwattana",
     "screen.storeSection": "",
     "libraryItemId": "13E3BD20DC014E",
     "itemId": "138E724FA9D80B",
@@ -141,7 +141,7 @@
   },
   {
     "Total": "11",
-    "screen.screen_name": "detol",
+    "screen.ProjectName": "Project2026 Supplier Day",
     "libraryItem.label": "Dettol_Proskin_02.mp4",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "TopsDigital-Chaengwattana",
@@ -155,10 +155,10 @@
   },
   {
     "Total": "19",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2026 Supplier Day",
     "libraryItem.label": "Dettol_Proskin_02.mp4",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
-    "screen.storeLocation": "BigC 50 + 5 สาขา",
+    "screen.storeLocation": "TopsDigital-Chaengwattana",
     "screen.storeSection": "",
     "libraryItemId": "1302001DFDDA34",
     "itemId": "136C9B7906B365",
@@ -169,7 +169,7 @@
   },
   {
     "Total": "10",
-    "screen.screen_name": "detol",
+    "screen.ProjectName": "Project2026 Supplier Day",
     "libraryItem.label": "Dettol_Proskin_01.mp4",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "TopsDigital-Chaengwattana",
@@ -183,10 +183,10 @@
   },
   {
     "Total": "19",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2026 Supplier Day",
     "libraryItem.label": "Dettol_Proskin_01.mp4",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
-    "screen.storeLocation": "BigC 50 + 5 สาขา",
+    "screen.storeLocation": "TopsDigital-Chaengwattana",
     "screen.storeSection": "",
     "libraryItemId": "13A1C0C32DBD09",
     "itemId": "13E439ADFABE7F",
@@ -197,7 +197,7 @@
   },
   {
     "Total": "19",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "AEON Cobrand - 1080x1920.mp4",
     "screenLabel": "Test kiosk CDG",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -211,7 +211,7 @@
   },
   {
     "Total": "1",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -225,7 +225,7 @@
   },
   {
     "Total": "7",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -239,7 +239,7 @@
   },
   {
     "Total": "14",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -253,7 +253,7 @@
   },
   {
     "Total": "3",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -267,7 +267,7 @@
   },
   {
     "Total": "99",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -281,7 +281,7 @@
   },
   {
     "Total": "12",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -295,7 +295,7 @@
   },
   {
     "Total": "2",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -309,7 +309,7 @@
   },
   {
     "Total": "28",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -323,7 +323,7 @@
   },
   {
     "Total": "4",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -337,7 +337,7 @@
   },
   {
     "Total": "3",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -351,7 +351,7 @@
   },
   {
     "Total": "7",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -365,7 +365,7 @@
   },
   {
     "Total": "12",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -379,7 +379,7 @@
   },
   {
     "Total": "7",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -393,7 +393,7 @@
   },
   {
     "Total": "6",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -407,7 +407,7 @@
   },
   {
     "Total": "10",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -421,7 +421,7 @@
   },
   {
     "Total": "2",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -435,7 +435,7 @@
   },
   {
     "Total": "8",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -449,7 +449,7 @@
   },
   {
     "Total": "6",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2026 Supplier Day",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "TopsDigital-Chaengwattana",
@@ -463,7 +463,7 @@
   },
   {
     "Total": "76",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -477,7 +477,7 @@
   },
   {
     "Total": "4",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -491,7 +491,7 @@
   },
   {
     "Total": "7",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2026 Supplier Day",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "TopsDigital-Chaengwattana",
@@ -505,7 +505,7 @@
   },
   {
     "Total": "6",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -519,7 +519,7 @@
   },
   {
     "Total": "1",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -533,7 +533,7 @@
   },
   {
     "Total": "3",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -547,7 +547,7 @@
   },
   {
     "Total": "21",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -561,7 +561,7 @@
   },
   {
     "Total": "24",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -575,7 +575,7 @@
   },
   {
     "Total": "3",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -589,7 +589,7 @@
   },
   {
     "Total": "4",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -603,7 +603,7 @@
   },
   {
     "Total": "83",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -617,7 +617,7 @@
   },
   {
     "Total": "12",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -631,7 +631,7 @@
   },
   {
     "Total": "11",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -645,7 +645,7 @@
   },
   {
     "Total": "45",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -659,7 +659,7 @@
   },
   {
     "Total": "29",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -673,7 +673,7 @@
   },
   {
     "Total": "34",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -687,7 +687,7 @@
   },
   {
     "Total": "4",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -701,7 +701,7 @@
   },
   {
     "Total": "4",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -715,7 +715,7 @@
   },
   {
     "Total": "3",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -729,7 +729,7 @@
   },
   {
     "Total": "3",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -743,7 +743,7 @@
   },
   {
     "Total": "15",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -757,7 +757,7 @@
   },
   {
     "Total": "7",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -771,7 +771,7 @@
   },
   {
     "Total": "14",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -785,10 +785,10 @@
   },
   {
     "Total": "7",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2026 Supplier Day",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
-    "screen.storeLocation": "BigC 50 + 5 สาขา",
+    "screen.storeLocation": "TopsDigital-Chaengwattana",
     "screen.storeSection": "",
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
@@ -799,7 +799,7 @@
   },
   {
     "Total": "18",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -813,7 +813,7 @@
   },
   {
     "Total": "1",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -827,7 +827,7 @@
   },
   {
     "Total": "2",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -841,7 +841,7 @@
   },
   {
     "Total": "10",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -855,7 +855,7 @@
   },
   {
     "Total": "2",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -869,7 +869,7 @@
   },
   {
     "Total": "30",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -883,7 +883,7 @@
   },
   {
     "Total": "3",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -897,7 +897,7 @@
   },
   {
     "Total": "3",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -911,7 +911,7 @@
   },
   {
     "Total": "8",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -925,7 +925,7 @@
   },
   {
     "Total": "2",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -939,7 +939,7 @@
   },
   {
     "Total": "11",
-    "screen.screen_name": "",
+    "screen.ProjectName": "",
     "libraryItem.label": "",
     "screenLabel": "DEFECT 23\" Digital shelf education bar (plus speakers) ไม่มีเสียง",
     "screen.storeLocation": "Vanit2",
@@ -953,7 +953,7 @@
   },
   {
     "Total": "3",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -967,7 +967,7 @@
   },
   {
     "Total": "11",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -981,7 +981,7 @@
   },
   {
     "Total": "13",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -995,7 +995,7 @@
   },
   {
     "Total": "19",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -1009,7 +1009,7 @@
   },
   {
     "Total": "3",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -1023,7 +1023,7 @@
   },
   {
     "Total": "11",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
@@ -1037,7 +1037,7 @@
   },
   {
     "Total": "8",
-    "screen.screen_name": "",
+    "screen.ProjectName": "Project2025 Detail BigC Cy8.5",
     "libraryItem.label": "",
     "screenLabel": "23\" Lift&Learn Shelf Strip",
     "screen.storeLocation": "BigC 50 + 5 สาขา",
