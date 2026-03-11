@@ -21,7 +21,7 @@ export default function LoginPage() {
       if (username === "admin" && password === "1234") {
         router.push("/dashboard");
       } else {
-        setError("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง");
+        setError("Invalid username or password");
         setIsLoading(false);
       }
     }, 800);
@@ -59,10 +59,10 @@ export default function LoginPage() {
               </div>
             </div>
             <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 mb-3 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600">
-              ยินดีต้อนรับกลับมา
+              Welcome Back
             </h1>
             <p className="max-w-[280px] text-slate-400 font-medium leading-relaxed opacity-80">
-              เข้าถึงระบบจัดการคอนเทนต์แบบอินเตอร์แอคทีฟ
+              Access the interactive content management system
             </p>
           </div>
 
@@ -74,7 +74,7 @@ export default function LoginPage() {
                   htmlFor="username"
                   className="ml-1 block text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400"
                 >
-                  ชื่อผู้ใช้
+                  Username
                 </label>
                 <div className="group relative">
                   <div className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400 group-focus-within:text-purple-500 transition-colors">
@@ -98,7 +98,7 @@ export default function LoginPage() {
                   htmlFor="password"
                   className="ml-1 block text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400"
                 >
-                  รหัสผ่าน
+                  Password
                 </label>
                 <div className="group relative">
                   <div className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400 group-focus-within:text-purple-500 transition-colors">
@@ -138,7 +138,7 @@ export default function LoginPage() {
                   </svg>
                 ) : (
                   <>
-                    เข้าสู่ระบบ
+                    Sign In
                     <div className="flex items-center transition-transform group-hover:translate-x-1.5 duration-300">
                       <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
