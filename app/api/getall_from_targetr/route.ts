@@ -5,10 +5,18 @@ import axios from "axios";
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
+    //         ?startmill=1773111601000&endmill=1773129601000
+    // --- คำนวณค่า Default (เวลาไทย 0:00 ถึง ปัจจุบัน) ---
+    const now = new Date();
+    // 0:00 UTC ของวันนี้
+    const startOfTodayUTC = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+    // 0:00 ไทย คือ 17:00 UTC ของเมื่อวาน (ถอยไป 7 ชม.)
+    const defaultStart = (startOfTodayUTC.getTime() - (7 * 60 * 60 * 1000)).toString();
+    const defaultEnd = Date.now().toString();
 
-    // รับค่า parameters พร้อม default values
-    const startmill = searchParams.get("startmill") || "1704042000000";
-    const endmill = searchParams.get("endmill") || Date.now().toString();
+    // รับค่าจาก parameters ถ้าไม่มีให้ใช้ค่า default ที่คำนวณไว้
+    const startmill = searchParams.get("startmill") || defaultStart;
+    const endmill = searchParams.get("endmill") || defaultEnd;
 
     // เรียก API ของ targetr
     const response = await targetrApi.get("/api/display-summary/full.csv", {
