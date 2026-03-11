@@ -25,27 +25,25 @@ export async function GET(request: NextRequest) {
     // แปลง CSV เป็น JSON
     const csvData = response.data;
     const lines = csvData.trim().split("\n");
-    const headers = lines[0].split(",");
+    const headers = lines[0].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
 
     const jsonData = lines
       .slice(1)
       .map((line: string) => {
-        const values = line.match(/(".*?"|[^,]+)(?=\s*,|\s*$)/g) || [];
+        // ใช้ split แทน match เพื่อให้รองรับ field ที่ว่าง (,,)
+        // regex นี้จะ split ด้วย comma ที่อยู่นอกเครื่องหมายคำพูดเท่านั้น
+        const values = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
         const obj: Record<string, string> = {};
 
         headers.forEach((header: string, index: number) => {
           let value = values[index] || "";
-          // ลับเครื่องหมายคำพูดออกและ trim whitespace/r/n
+          // ลบเครื่องหมายคำพูดออก ขจัดช่องว่าง และตัวอักษรพิเศษ
           value = value.replace(/^"(.*)"$/, "$1").trim();
           obj[header.trim()] = value;
         });
 
         return obj;
-      })
-      .filter(
-        (item: Record<string, string>) =>
-          item.displayCount && item.displayCount !== "",
-      );
+      });
 
     return NextResponse.json(jsonData);
   } catch (error: unknown) {
