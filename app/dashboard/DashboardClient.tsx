@@ -10,14 +10,15 @@ interface DisplayCounts {
 
 interface LiftData {
   Total: string;
-  libraryItemLabel: string;
+  "screen.screen_name": string;
+  "libraryItem.label": string;
   screenLabel: string;
-  storeLocation: string;
-  storeSection: string;
+  "screen.storeLocation": string;
+  "screen.storeSection": string;
   libraryItemId: string;
   itemId: string;
   screenId: string;
-  displayCounts: DisplayCounts;
+  [key: string]: string; // Support for flattened displayCount_DATE
 }
 
 // Section filter component
@@ -138,9 +139,9 @@ export default function DashboardClient({
   function hasAllFields(item: LiftData) {
     return (
       item.Total?.toString().trim() !== "" &&
-      item.libraryItemLabel?.toString().trim() !== "" &&
+      item["libraryItem.label"]?.toString().trim() !== "" &&
       item.screenLabel?.toString().trim() !== "" &&
-      item.storeLocation?.toString().trim() !== "" &&
+      item["screen.storeLocation"]?.toString().trim() !== "" &&
       item.itemId?.toString().trim() !== "" &&
       item.screenId?.toString().trim() !== "" &&
       item.libraryItemId?.toString().trim() !== ""
@@ -151,9 +152,9 @@ export default function DashboardClient({
     // section match
     let sectionMatch = true;
     if (selectedSection === "main_area")
-      sectionMatch = !item.storeSection || item.storeSection === "";
+      sectionMatch = !item["screen.storeSection"] || item["screen.storeSection"] === "";
     if (selectedSection === "shelf")
-      sectionMatch = item.storeSection === "Shelf";
+      sectionMatch = item["screen.storeSection"] === "Shelf";
 
     // only include rows where all required fields are present
     return sectionMatch && hasAllFields(item);
@@ -165,9 +166,9 @@ export default function DashboardClient({
     0,
   );
   const uniqueContents = new Set(
-    filteredData.map((item) => item.libraryItemLabel),
+    filteredData.map((item) => item["libraryItem.label"]),
   ).size;
-  const uniqueStores = new Set(filteredData.map((item) => item.storeLocation))
+  const uniqueStores = new Set(filteredData.map((item) => item["screen.storeLocation"]))
     .size;
   const uniqueScreens = new Set(filteredData.map((item) => item.screenId)).size;
 
@@ -419,14 +420,14 @@ export default function DashboardClient({
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
                           <div className="h-10 w-10 flex-shrink-0 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs uppercase group-hover:bg-blue-600 group-hover:text-white transition-all">
-                            {item.libraryItemLabel.substring(0, 2)}
+                            {item.screenLabel?.substring(0, 2) || "NA"}
                           </div>
                           <div>
                             <div className="font-semibold text-slate-800">
-                              {item.libraryItemLabel}
+                              {item.screenLabel}
                             </div>
                             <div className="text-xs text-slate-400">
-                              ID: {item.libraryItemId}
+                              ID: {item.screenId}
                             </div>
                           </div>
                         </div>
@@ -434,11 +435,11 @@ export default function DashboardClient({
                       <td className="px-6 py-4">
                         <div className="flex flex-col">
                           <Link
-                            href={`/dashboard/stores/${encodeURIComponent(item.storeLocation)}`}
+                            href={`/dashboard/stores/${encodeURIComponent(item["screen.storeLocation"])}`}
                             className="group/link inline-block w-fit"
                           >
                             <div className="text-sm font-bold text-slate-700 group-hover/link:text-blue-600 transition-colors flex items-center gap-1">
-                              {item.storeLocation}
+                              {item["screen.storeLocation"]}
                               <svg
                                 className="h-3 w-3 opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all text-blue-500"
                                 fill="none"
@@ -455,10 +456,10 @@ export default function DashboardClient({
                             </div>
                           </Link>
                           <Link
-                            href={`/dashboard/stores/${encodeURIComponent(item.storeLocation)}/sections/${encodeURIComponent(item.storeSection || "Main Area")}`}
+                            href={`/dashboard/stores/${encodeURIComponent(item["screen.storeLocation"])}/sections/${encodeURIComponent(item["screen.storeSection"] || "Main Area")}`}
                             className="text-xs text-slate-500 hover:text-blue-500 hover:underline transition-colors block w-fit mt-0.5"
                           >
-                            {item.storeSection || "Main Area"}
+                            {item["screen.storeSection"] || "Main Area"}
                           </Link>
                         </div>
                       </td>
@@ -477,7 +478,7 @@ export default function DashboardClient({
                               d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                             />
                           </svg>
-                          {item.screenLabel}
+                          {item["libraryItem.label"]}
                         </div>
                       </td>
                       <td className="px-6 py-4">
@@ -497,7 +498,7 @@ export default function DashboardClient({
                       </td>
                       <td className="px-6 py-4">
                         <code className="text-[10px] bg-slate-100 px-2 py-1 rounded text-slate-500">
-                          #{item.itemId}
+                           #{item.itemId}
                         </code>
                       </td>
                     </tr>

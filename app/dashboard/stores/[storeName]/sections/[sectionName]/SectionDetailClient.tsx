@@ -16,13 +16,15 @@ import Link from 'next/link';
 
 interface LiftData {
   Total: string;
-  libraryItemLabel: string;
+  "screen.screen_name": string;
+  "libraryItem.label": string;
   screenLabel: string;
-  storeLocation: string;
-  storeSection: string;
+  "screen.storeLocation": string;
+  "screen.storeSection": string;
   libraryItemId: string;
   itemId: string;
   screenId: string;
+  [key: string]: string; // Support for flattened displayCount_DATE
 }
 
 export default function SectionDetailClient({ 
@@ -36,8 +38,8 @@ export default function SectionDetailClient({
 }) {
   const sectionData = useMemo(() => {
     return data.filter(item => 
-      item.storeLocation === storeName && 
-      (item.storeSection === sectionName || (sectionName === 'Main Area' && !item.storeSection))
+      item["screen.storeLocation"] === storeName && 
+      (item["screen.storeSection"] === sectionName || (sectionName === 'Main Area' && !item["screen.storeSection"]))
     );
   }, [data, storeName, sectionName]);
 
@@ -48,8 +50,9 @@ export default function SectionDetailClient({
     // Aggregation for items in this section
     const contentMap = new Map<string, number>();
     sectionData.forEach(item => {
-      const current = contentMap.get(item.libraryItemLabel) || 0;
-      contentMap.set(item.libraryItemLabel, current + parseInt(item.Total || '0'));
+      const label = item["libraryItem.label"] || "Unknown";
+      const current = contentMap.get(label) || 0;
+      contentMap.set(label, current + parseInt(item.Total || '0'));
     });
     
     const chartData = Array.from(contentMap.entries())

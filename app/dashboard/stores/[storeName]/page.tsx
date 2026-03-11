@@ -8,14 +8,15 @@ interface DisplayCounts {
 
 interface LiftData {
   Total: string;
-  libraryItemLabel: string;
+  "screen.screen_name": string;
+  "libraryItem.label": string;
   screenLabel: string;
-  storeLocation: string;
-  storeSection: string;
+  "screen.storeLocation": string;
+  "screen.storeSection": string;
   libraryItemId: string;
   itemId: string;
   screenId: string;
-  displayCounts: DisplayCounts;
+  [key: string]: string; // Support for flattened displayCount_DATE
 }
 
 export const revalidate = 600;

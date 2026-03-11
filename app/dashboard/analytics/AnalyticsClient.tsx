@@ -20,14 +20,15 @@ interface DisplayCounts {
 
 interface LiftData {
   Total: string;
-  libraryItemLabel: string;
+  "screen.screen_name": string;
+  "libraryItem.label": string;
   screenLabel: string;
-  storeLocation: string;
-  storeSection: string;
+  "screen.storeLocation": string;
+  "screen.storeSection": string;
   libraryItemId: string;
   itemId: string;
   screenId: string;
-  displayCounts: DisplayCounts;
+  [key: string]: string; // Support for flattened displayCount_DATE
 }
 
 export default function AnalyticsClient({ data }: { data: LiftData[] }) {
@@ -35,8 +36,9 @@ export default function AnalyticsClient({ data }: { data: LiftData[] }) {
   const chartData = useMemo(() => {
     const map = new Map<string, number>();
     data.forEach(item => {
-      const current = map.get(item.libraryItemLabel) || 0;
-      map.set(item.libraryItemLabel, current + parseInt(item.Total || '0'));
+      const label = item["libraryItem.label"] || "Unknown";
+      const current = map.get(label) || 0;
+      map.set(label, current + parseInt(item.Total || '0'));
     });
     
     return Array.from(map.entries())
@@ -49,8 +51,9 @@ export default function AnalyticsClient({ data }: { data: LiftData[] }) {
   const storeData = useMemo(() => {
     const map = new Map<string, number>();
     data.forEach(item => {
-      const current = map.get(item.storeLocation) || 0;
-      map.set(item.storeLocation, current + parseInt(item.Total || '0'));
+      const location = item["screen.storeLocation"] || "Unknown";
+      const current = map.get(location) || 0;
+      map.set(location, current + parseInt(item.Total || '0'));
     });
     
     return Array.from(map.entries())

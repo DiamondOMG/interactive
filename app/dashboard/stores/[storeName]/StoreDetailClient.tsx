@@ -23,13 +23,15 @@ import Link from "next/link";
 
 interface LiftData {
   Total: string;
-  libraryItemLabel: string;
+  "screen.screen_name": string;
+  "libraryItem.label": string;
   screenLabel: string;
-  storeLocation: string;
-  storeSection: string;
+  "screen.storeLocation": string;
+  "screen.storeSection": string;
   libraryItemId: string;
   itemId: string;
   screenId: string;
+  [key: string]: string; // Support for flattened displayCount_DATE
 }
 
 export default function StoreDetailClient({
@@ -43,30 +45,30 @@ export default function StoreDetailClient({
 
   const storeData = useMemo(() => {
     const filteredByStore = data.filter(
-      (item) => item.storeLocation === storeName,
+      (item) => item["screen.storeLocation"] === storeName,
     );
 
     // Filter by section
     if (selectedSection === "all") return filteredByStore;
     if (selectedSection === "main_area")
       return filteredByStore.filter(
-        (item) => !item.storeSection || item.storeSection === "",
+        (item) => !item["screen.storeSection"] || item["screen.storeSection"] === "",
       );
     if (selectedSection === "shelf")
-      return filteredByStore.filter((item) => item.storeSection === "Shelf");
+      return filteredByStore.filter((item) => item["screen.storeSection"] === "Shelf");
     return filteredByStore;
   }, [data, storeName, selectedSection]);
 
   // Get available sections for this store
   const availableSections = useMemo(() => {
     const filteredByStore = data.filter(
-      (item) => item.storeLocation === storeName,
+      (item) => item["screen.storeLocation"] === storeName,
     );
     const hasShelf = filteredByStore.some(
-      (item) => item.storeSection === "Shelf",
+      (item) => item["screen.storeSection"] === "Shelf",
     );
     const hasMainArea = filteredByStore.some(
-      (item) => !item.storeSection || item.storeSection === "",
+      (item) => !item["screen.storeSection"] || item["screen.storeSection"] === "",
     );
 
     return [
@@ -88,9 +90,10 @@ export default function StoreDetailClient({
     // Aggregation for chart
     const contentMap = new Map<string, number>();
     storeData.forEach((item) => {
-      const current = contentMap.get(item.libraryItemLabel) || 0;
+      const label = item["libraryItem.label"] || "Unknown";
+      const current = contentMap.get(label) || 0;
       contentMap.set(
-        item.libraryItemLabel,
+        label,
         current + parseInt(item.Total || "0"),
       );
     });

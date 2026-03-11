@@ -5,13 +5,15 @@ import { ShieldCheck, LayoutDashboard, BarChart3, Settings } from 'lucide-react'
 
 interface LiftData {
   Total: string;
-  libraryItemLabel: string;
+  "screen.screen_name": string;
+  "libraryItem.label": string;
   screenLabel: string;
-  storeLocation: string;
-  storeSection: string;
+  "screen.storeLocation": string;
+  "screen.storeSection": string;
   libraryItemId: string;
   itemId: string;
   screenId: string;
+  [key: string]: string;
 }
 
 export const revalidate = 600;
