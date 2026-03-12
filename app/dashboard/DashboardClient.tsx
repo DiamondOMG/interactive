@@ -295,13 +295,13 @@ export default function DashboardClient() {
               <table className="w-full text-left table-fixed">
                 <thead>
                   <tr className="bg-slate-50 border-b border-slate-200">
-                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 w-[25%] min-w-[200px]">
+                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 w-[20%]">
                       Content Label
                     </th>
-                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 w-[20%] min-w-[150px]">
+                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 w-[18%]">
                       Store / Section
                     </th>
-                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 w-[15%] min-w-[120px]">
+                    <th className="px-6 py-4 text-xs font-bold tracking-wider text-slate-500 w-[12%]">
                       Device
                     </th>
                     {dayKeys.map(dk => (
@@ -363,18 +363,8 @@ export default function DashboardClient() {
                             className="transition-colors hover:bg-blue-50/30 group"
                           >
                             <td className="px-6 py-4">
-                              <div className="flex items-center gap-3">
-                                <div className="h-10 w-10 flex-shrink-0 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs uppercase group-hover:bg-blue-600 group-hover:text-white transition-all">
-                                  {item.screenLabel?.substring(0, 2) || "NA"}
-                                </div>
-                                <div>
-                                  <div className="font-semibold text-slate-800">
-                                    {item.screenLabel}
-                                  </div>
-                                  <div className="text-xs text-slate-400">
-                                    ID: {item.screenId}
-                                  </div>
-                                </div>
+                              <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 text-[15px] font-bold text-slate-800 uppercase">
+                                {item["libraryItem.label"]}
                               </div>
                             </td>
                             <td className="px-6 py-4">
@@ -405,22 +395,16 @@ export default function DashboardClient() {
                                  </div>
                               </div>
                             </td>
-                            <td className="px-6 py-4">
-                              <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600">
-                                <svg
-                                  className="h-3 w-3"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                                  />
-                                </svg>
-                                {item["libraryItem.label"]}
+                            <td className="px-4 py-4">
+                              <div className="flex items-center gap-3">
+                                <div>
+                                  <div className="text-sm text-slate-800">
+                                    {item.screenLabel}
+                                  </div>
+                                  <div className="text-xs text-slate-400">
+                                    ID: {item.screenId}
+                                  </div>
+                                </div>
                               </div>
                             </td>
                             {dayKeys.map(dk => (
