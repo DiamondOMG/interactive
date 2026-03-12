@@ -26,9 +26,7 @@ export async function GET(request: NextRequest) {
     // --- 2) ดึงข้อมูลจาก AppScript (ฐานหลัก) ---
     const appscriptUrl =
       "https://script.google.com/macros/s/AKfycbyZRJ4yoRWuvatmpEzZyc8hQFHdpfMHgPia7ZMN1gzLxByLL_rDo8CCr19qG8pgidGC/exec?action=getall";
-    const appscriptResponse = await fetch(appscriptUrl, {
-      next: { revalidate: 60 },
-    });
+    const appscriptResponse = await fetch(appscriptUrl);
 
     if (!appscriptResponse.ok) {
       throw new Error("Failed to fetch data from Google Apps Script");
@@ -49,7 +47,7 @@ export async function GET(request: NextRequest) {
           aggregation: "screen_and_item",
           groupId: "13908CF4A44ABA",
           fields:
-            "screen.screen_name,libraryItem.label,screenLabel,screen.storeLocation,libraryItemId,itemId,screenId,displayCount",
+            "screen.ProjectName,libraryItem.label,screenLabel,screen.storeLocation,libraryItemId,itemId,screenId,displayCount",
         },
       }
     );
@@ -131,12 +129,6 @@ export async function GET(request: NextRequest) {
       data = data.filter(
         (item) =>
           !item["screen.storeSection"] || item["screen.storeSection"] === ""
-      );
-    }
-
-    if (section === "shelf") {
-      data = data.filter(
-        (item) => item["screen.storeSection"] === "Shelf"
       );
     }
 
