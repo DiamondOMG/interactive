@@ -29,12 +29,33 @@ export default function StoreDetailClient({
   storeName: string;
 }) {
   const data = useFilteredData();
+  const [selectedSection, setSelectedSection] = useState("All");
 
-  const storeData = useMemo(() => {
+  // ข้อมูลทั้งหมดของร้านนี้ (ยังไม่กรอง Section)
+  const rawStoreData = useMemo(() => {
     return data.filter(
       (item) => item["screen.storeLocation"] === storeName,
     );
   }, [data, storeName]);
+
+  // หา Section ที่มีอยู่จริงในข้อมูลชุดนี้แบบ Dynamic
+  const availableSections = useMemo(() => {
+    const sections = new Set<string>();
+    sections.add("All");
+    rawStoreData.forEach(item => {
+      sections.add(item["screen.storeSection"] || "Main Area");
+    });
+    return Array.from(sections).sort();
+  }, [rawStoreData]);
+
+  // ข้อมูลที่กรองตาม Section ที่เลือกแล้ว
+  const storeData = useMemo(() => {
+    if (selectedSection === "All") return rawStoreData;
+    return rawStoreData.filter(item => {
+      const s = item["screen.storeSection"] || "Main Area";
+      return s === selectedSection;
+    });
+  }, [rawStoreData, selectedSection]);
 
 
   const stats = useMemo(() => {
@@ -105,21 +126,44 @@ export default function StoreDetailClient({
               </h1>
               <p className="text-slate-500 flex items-center gap-1.5 text-sm">
                 <Monitor className="h-3.5 w-3.5" />
+                {selectedSection !== "All" && (
+                  <span className="text-indigo-600 font-medium">
+                    {selectedSection} •{" "}
+                  </span>
+                )}
                 {stats.uniqueScreens} active kiosks in this branch
               </p>
             </div>
           </div>
         </div>
 
-        <div className="flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-4 py-3 shadow-sm">
-          <Calendar className="h-4 w-4 text-slate-400" />
+        <div className="flex flex-col md:flex-row items-center gap-4">
+          {/* Dynamic Section Filter */}
+          <div className="flex items-center gap-2 bg-slate-100 p-1 rounded-xl border border-slate-200">
+            {availableSections.map((section) => (
+              <button
+                key={section}
+                onClick={() => setSelectedSection(section)}
+                className={`px-4 py-1.5 text-xs font-bold rounded-lg transition-all ${
+                  selectedSection === section
+                    ? "bg-white text-indigo-600 shadow-sm ring-1 ring-slate-200"
+                    : "text-slate-500 hover:text-slate-700"
+                }`}
+              >
+                {section}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-4 py-3 shadow-sm">
+            <Calendar className="h-4 w-4 text-slate-400" />
           <span className="text-sm font-bold text-slate-600">Sync Period:</span>
           <span className="text-sm font-medium text-slate-500 underline decoration-blue-500 underline-offset-4">
             Last 10 minutes
           </span>
         </div>
+        </div>
       </div>
-
 
       {/* Grid Summary */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -182,7 +226,11 @@ export default function StoreDetailClient({
                   horizontal={false}
                   stroke="#f1f5f9"
                 />
-                <XAxis type="number" hide />
+                <XAxis 
+                  type="number" 
+                  tick={{ fill: "#64748b", fontSize: 11, fontWeight: 600 }}
+                  stroke="#cbd5e1"
+                />
                 <YAxis
                   dataKey="name"
                   type="category"
