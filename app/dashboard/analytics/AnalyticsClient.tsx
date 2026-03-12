@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import  { useMemo } from 'react';
 import { 
   BarChart, 
   Bar, 
@@ -10,14 +10,13 @@ import {
   Tooltip, 
   ResponsiveContainer, 
   Cell,
-  Legend
 } from 'recharts';
 import { TrendingUp, Package, MapPin, Monitor } from 'lucide-react';
 
-import { useStore } from '@/lib/store';
+import { useFilteredData } from '@/lib/store';
 
 export default function AnalyticsClient() {
-  const { liftData: data } = useStore();
+  const data = useFilteredData();
   // Aggregate data by Library Item Label
   const chartData = useMemo(() => {
     const map = new Map<string, number>();

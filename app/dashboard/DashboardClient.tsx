@@ -40,29 +40,46 @@ export default function DashboardClient() {
     }));
   };
 
-  // Today key for displayCount
-  const todayKey = useMemo(() => {
-    const now = new Date();
-    const dd = String(now.getUTCDate()).padStart(2, '0');
-    const mm = String(now.getUTCMonth() + 1).padStart(2, '0');
-    const yyyy = now.getUTCFullYear();
+  // Helper: สร้าง displayCount key จาก Date
+  const makeDayKey = (date: Date) => {
+    const dd = String(date.getUTCDate()).padStart(2, '0');
+    const mm = String(date.getUTCMonth() + 1).padStart(2, '0');
+    const yyyy = date.getUTCFullYear();
     return `displayCount_${dd}/${mm}/${yyyy}`;
+  };
+
+  // 3-day keys: วันนี้, เมื่อวาน, เมื่อวานซืน (คำนวณฝั่ง client เพื่อเลี่ยง hydration mismatch)
+  const [dayKeys, setDayKeys] = useState<{ key: string; label: string }[]>([]);
+
+  React.useEffect(() => {
+    const now = new Date();
+    const days = [0, 1, 2].map(offset => {
+      const d = new Date(now);
+      d.setUTCDate(d.getUTCDate() - offset);
+      return {
+        key: makeDayKey(d),
+        label: `${String(d.getUTCDate()).padStart(2,'0')}/${String(d.getUTCMonth()+1).padStart(2,'0')}`,
+      };
+    });
+    setDayKeys(days);
   }, []);
 
   // Group data by Project Name
   const groupedByProject = useMemo(() => {
-    const groups: Record<string, { items: LiftData[]; total: number; today: number }> = {};
+    const groups: Record<string, { items: LiftData[]; total: number; days: number[] }> = {};
     filteredData.forEach(item => {
       const projectName = item["screen.ProjectName"] || "No Project";
       if (!groups[projectName]) {
-        groups[projectName] = { items: [], total: 0, today: 0 };
+        groups[projectName] = { items: [], total: 0, days: [0, 0, 0] };
       }
       groups[projectName].items.push(item);
       groups[projectName].total += parseInt(item.Total || "0");
-      groups[projectName].today += parseInt(item[todayKey] || "0");
+      dayKeys.forEach((dk, i) => {
+        groups[projectName].days[i] += parseInt(item[dk.key] || "0");
+      });
     });
     return groups;
-  }, [filteredData, todayKey]);
+  }, [filteredData, dayKeys]);
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
@@ -285,22 +302,24 @@ export default function DashboardClient() {
               </div>
             </div>
             <div className="overflow-x-auto">
-              <table className="w-full text-left">
+              <table className="w-full text-left table-fixed">
                 <thead>
                   <tr className="bg-slate-50 border-b border-slate-200">
-                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">
+                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 w-[25%] min-w-[200px]">
                       Content Label
                     </th>
-                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">
+                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 w-[20%] min-w-[150px]">
                       Store / Section
                     </th>
-                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">
+                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 w-[15%] min-w-[120px]">
                       Device
                     </th>
-                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                      Today&apos;s Lift
-                    </th>
-                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">
+                    {dayKeys.map(dk => (
+                      <th key={dk.key} className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 text-right w-24">
+                        {dk.label}
+                      </th>
+                    ))}
+                    <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 text-right w-24">
                       Total
                     </th>
                   </tr>
@@ -333,12 +352,14 @@ export default function DashboardClient() {
                               </span>
                             </div>
                           </td>
-                          <td className="px-6 py-3">
-                            <div className="font-black text-indigo-700">
-                              {group.today.toLocaleString()}
-                            </div>
-                          </td>
-                          <td className="px-6 py-3">
+                          {group.days.map((count, di) => (
+                            <td key={di} className="px-6 py-3 text-right">
+                              <div className="font-black text-indigo-700">
+                                {count.toLocaleString()}
+                              </div>
+                            </td>
+                          ))}
+                          <td className="px-6 py-3 text-right">
                             <div className="font-black text-blue-800">
                               {group.total.toLocaleString()}
                             </div>
@@ -415,12 +436,14 @@ export default function DashboardClient() {
                                 {item["libraryItem.label"]}
                               </div>
                             </td>
-                            <td className="px-6 py-4">
-                              <div className="text-lg font-bold text-indigo-600">
-                                {item[todayKey] || "0"}
-                              </div>
-                            </td>
-                            <td className="px-6 py-4">
+                            {dayKeys.map(dk => (
+                              <td key={dk.key} className="px-6 py-4 text-right">
+                                <div className="text-lg font-bold text-indigo-600">
+                                  {item[dk.key] || "0"}
+                                </div>
+                              </td>
+                            ))}
+                            <td className="px-6 py-4 text-right">
                               <div className="text-lg font-bold text-blue-700">
                                 {item.Total}
                               </div>
