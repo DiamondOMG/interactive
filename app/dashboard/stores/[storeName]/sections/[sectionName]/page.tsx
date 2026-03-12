@@ -4,8 +4,23 @@ import Link from 'next/link';
 import { ShieldCheck, LayoutDashboard, BarChart3 } from 'lucide-react';
 import { getLiftData } from '@/lib/api';
 import StoreInitializer from '@/components/StoreInitializer';
+import { Metadata } from 'next';
 
 export const revalidate = 600;
+
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<{ storeName: string; sectionName: string }> 
+}): Promise<Metadata> {
+  const { storeName, sectionName } = await params;
+  const decodedStore = decodeURIComponent(storeName);
+  const decodedSection = decodeURIComponent(sectionName);
+  return {
+    title: `${decodedSection} - ${decodedStore} | OMG Interactive`,
+    description: `Detailed interaction analytics for ${decodedSection} zone in ${decodedStore}.`,
+  };
+}
 
 export default async function SectionPage({ 
   params 

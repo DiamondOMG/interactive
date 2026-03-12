@@ -1,6 +1,12 @@
 import DashboardClient from "./DashboardClient";
 import StoreInitializer from "@/components/StoreInitializer";
 import { LiftData } from "@/lib/types";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dashboard Overview | OMG Interactive",
+  description: "Monitor real-time interactions, unique content engagement, and store performance.",
+};
 
 // ISR configuration: Revalidate every 60 seconds
 export const revalidate = 600;

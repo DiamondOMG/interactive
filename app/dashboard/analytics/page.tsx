@@ -4,6 +4,12 @@ import Link from 'next/link';
 import { LayoutDashboard, BarChart3, Settings, ShieldCheck, ChevronLeft } from 'lucide-react';
 import { LiftData } from '@/lib/types';
 import StoreInitializer from '@/components/StoreInitializer';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Analytics Insights | OMG Interactive',
+  description: 'Deep dive into content performance and store engagement across the network.',
+};
 
 // ISR configuration: Revalidate every 10 minutes (matching user preference)
 export const revalidate = 600;

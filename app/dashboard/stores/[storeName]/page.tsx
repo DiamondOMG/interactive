@@ -3,8 +3,18 @@ import Link from 'next/link';
 import { ShieldCheck, LayoutDashboard, BarChart3, Settings } from 'lucide-react';
 import { getLiftData } from '@/lib/api';
 import StoreInitializer from '@/components/StoreInitializer';
+import { Metadata } from 'next';
 
 export const revalidate = 600;
+
+export async function generateMetadata({ params }: { params: Promise<{ storeName: string }> }): Promise<Metadata> {
+  const { storeName } = await params;
+  const decodedName = decodeURIComponent(storeName);
+  return {
+    title: `${decodedName} | OMG Interactive Dashboard`,
+    description: `Real-time engagement metrics and kiosk health for ${decodedName} location.`,
+  };
+}
 
 export default async function StorePage({ params }: { params: Promise<{ storeName: string }> }) {
   const { storeName } = await params;
