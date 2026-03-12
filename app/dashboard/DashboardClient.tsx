@@ -1,6 +1,7 @@
 "use client";
 
-import { useStore } from "@/lib/store";
+import React, { useState, useMemo } from "react";
+import { useStore, useFilteredData } from "@/lib/store";
 import { LiftData } from "@/lib/types";
 import Link from "next/link";
 
@@ -9,44 +10,13 @@ import SectionFilter from "@/components/dashboard/SectionFilter";
 
 export default function DashboardClient() {
   const { 
-    liftData, 
     selectedSection, 
     setSelectedSection,
     searchQuery,
     setSearchQuery 
   } = useStore();
 
-  // Filter data based on selected section
-  function hasAllFields(item: LiftData) {
-    return (
-      item.Total?.toString().trim() !== "" &&
-      item["libraryItem.label"]?.toString().trim() !== "" &&
-      item.screenLabel?.toString().trim() !== "" &&
-      item["screen.storeLocation"]?.toString().trim() !== "" &&
-      item.itemId?.toString().trim() !== "" &&
-      item.screenId?.toString().trim() !== "" &&
-      item.libraryItemId?.toString().trim() !== ""
-    );
-  }
-
-  const filteredData = liftData.filter((item) => {
-    // section match
-    let sectionMatch = true;
-    if (selectedSection === "main_area")
-      sectionMatch = !item["screen.storeSection"] || item["screen.storeSection"] === "";
-    if (selectedSection === "shelf")
-      sectionMatch = item["screen.storeSection"] === "Shelf";
-
-    // search match
-    const searchLower = searchQuery.toLowerCase();
-    const searchMatch = 
-      item.screenLabel?.toLowerCase().includes(searchLower) ||
-      item["screen.storeLocation"]?.toLowerCase().includes(searchLower) ||
-      item["libraryItem.label"]?.toLowerCase().includes(searchLower);
-
-    // only include rows where all required fields are present
-    return sectionMatch && hasAllFields(item) && searchMatch;
-  });
+  const filteredData = useFilteredData();
 
   // Calculations for Summary
   const totalLifts = filteredData.reduce(
@@ -59,6 +29,40 @@ export default function DashboardClient() {
   const uniqueStores = new Set(filteredData.map((item) => item["screen.storeLocation"]))
     .size;
   const uniqueScreens = new Set(filteredData.map((item) => item.screenId)).size;
+
+  // State for tree-view expansion
+  const [expandedProjects, setExpandedProjects] = useState<Record<string, boolean>>({});
+
+  const toggleProject = (projectName: string) => {
+    setExpandedProjects(prev => ({
+      ...prev,
+      [projectName]: !prev[projectName]
+    }));
+  };
+
+  // Today key for displayCount
+  const todayKey = useMemo(() => {
+    const now = new Date();
+    const dd = String(now.getUTCDate()).padStart(2, '0');
+    const mm = String(now.getUTCMonth() + 1).padStart(2, '0');
+    const yyyy = now.getUTCFullYear();
+    return `displayCount_${dd}/${mm}/${yyyy}`;
+  }, []);
+
+  // Group data by Project Name
+  const groupedByProject = useMemo(() => {
+    const groups: Record<string, { items: LiftData[]; total: number; today: number }> = {};
+    filteredData.forEach(item => {
+      const projectName = item["screen.ProjectName"] || "No Project";
+      if (!groups[projectName]) {
+        groups[projectName] = { items: [], total: 0, today: 0 };
+      }
+      groups[projectName].items.push(item);
+      groups[projectName].total += parseInt(item.Total || "0");
+      groups[projectName].today += parseInt(item[todayKey] || "0");
+    });
+    return groups;
+  }, [filteredData, todayKey]);
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
@@ -264,11 +268,11 @@ export default function DashboardClient() {
             />
           </div>
 
-          {/* Detailed Data Table */}
+          {/* Project Hierarchy Table */}
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
             <div className="border-b border-slate-100 bg-slate-50/50 px-6 py-4 flex items-center justify-between">
               <h3 className="font-bold text-slate-800 text-lg">
-                Detailed Activity Log
+                Project Hierarchy View
               </h3>
               <div className="flex items-center gap-2">
                 <input
@@ -294,105 +298,138 @@ export default function DashboardClient() {
                       Device
                     </th>
                     <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                      Total Interaction
+                      Today&apos;s Lift
                     </th>
                     <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                      Unique ID
+                      Total
                     </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
-                  {filteredData.map((item, idx) => (
-                    <tr
-                      key={idx}
-                      className="transition-colors hover:bg-blue-50/30 group"
-                    >
-                      <td className="px-6 py-4">
-                        <div className="flex items-center gap-3">
-                          <div className="h-10 w-10 flex-shrink-0 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs uppercase group-hover:bg-blue-600 group-hover:text-white transition-all">
-                            {item.screenLabel?.substring(0, 2) || "NA"}
-                          </div>
-                          <div>
-                            <div className="font-semibold text-slate-800">
-                              {item.screenLabel}
-                            </div>
-                            <div className="text-xs text-slate-400">
-                              ID: {item.screenId}
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="px-6 py-4">
-                        <div className="flex flex-col">
-                          <Link
-                            href={`/dashboard/stores/${encodeURIComponent(item["screen.storeLocation"])}`}
-                            className="group/link inline-block w-fit"
-                          >
-                            <div className="text-sm font-bold text-slate-700 group-hover/link:text-blue-600 transition-colors flex items-center gap-1">
-                              {item["screen.storeLocation"]}
+                  {Object.entries(groupedByProject).map(([projectName, group]) => {
+                    const isExpanded = expandedProjects[projectName];
+                    return (
+                      <React.Fragment key={projectName}>
+                        {/* --- Project Parent Row --- */}
+                        <tr
+                          className="bg-slate-50/80 hover:bg-slate-100 transition-colors cursor-pointer group"
+                          onClick={() => toggleProject(projectName)}
+                        >
+                          <td className="px-6 py-3" colSpan={3}>
+                            <div className="flex items-center gap-2">
                               <svg
-                                className="h-3 w-3 opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all text-blue-500"
+                                className={`h-4 w-4 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 ${isExpanded ? 'rotate-90' : ''}`}
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
                               >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M9 5l7 7-7 7"
-                                />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                               </svg>
+                              <span className="font-black text-slate-800 text-base tracking-tight">
+                                {projectName}
+                              </span>
+                              <span className="px-2 py-0.5 rounded-full bg-slate-200/80 text-[10px] font-bold text-slate-500">
+                                {group.items.length} items
+                              </span>
                             </div>
-                          </Link>
-                          <Link
-                            href={`/dashboard/stores/${encodeURIComponent(item["screen.storeLocation"])}/sections/${encodeURIComponent(item["screen.storeSection"] || "Main Area")}`}
-                            className="text-xs text-slate-500 hover:text-blue-500 hover:underline transition-colors block w-fit mt-0.5"
+                          </td>
+                          <td className="px-6 py-3">
+                            <div className="font-black text-indigo-700">
+                              {group.today.toLocaleString()}
+                            </div>
+                          </td>
+                          <td className="px-6 py-3">
+                            <div className="font-black text-blue-800">
+                              {group.total.toLocaleString()}
+                            </div>
+                          </td>
+                        </tr>
+
+                        {/* --- Child Rows (expanded) --- */}
+                        {isExpanded && group.items.map((item, iIdx) => (
+                          <tr
+                            key={`${projectName}-${iIdx}`}
+                            className="transition-colors hover:bg-blue-50/30 group"
                           >
-                            {item["screen.storeSection"] || "Main Area"}
-                          </Link>
-                        </div>
-                      </td>
-                      <td className="px-6 py-4">
-                        <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600">
-                          <svg
-                            className="h-3 w-3"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                            />
-                          </svg>
-                          {item["libraryItem.label"]}
-                        </div>
-                      </td>
-                      <td className="px-6 py-4">
-                        <div className="flex items-center gap-2">
-                          <div className="text-lg font-bold text-blue-700">
-                            {item.Total}
-                          </div>
-                          <div className="h-2 w-24 rounded-full bg-slate-100 overflow-hidden">
-                            <div
-                              className="h-full bg-blue-500 rounded-full"
-                              style={{
-                                width: `${Math.min((parseInt(item.Total) / 50) * 100, 100)}%`,
-                              }}
-                            ></div>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="px-6 py-4">
-                        <code className="text-[10px] bg-slate-100 px-2 py-1 rounded text-slate-500">
-                           #{item.itemId}
-                        </code>
-                      </td>
-                    </tr>
-                  ))}
+                            <td className="px-6 py-4">
+                              <div className="flex items-center gap-3">
+                                <div className="h-10 w-10 flex-shrink-0 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs uppercase group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                  {item.screenLabel?.substring(0, 2) || "NA"}
+                                </div>
+                                <div>
+                                  <div className="font-semibold text-slate-800">
+                                    {item.screenLabel}
+                                  </div>
+                                  <div className="text-xs text-slate-400">
+                                    ID: {item.screenId}
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                            <td className="px-6 py-4">
+                              <div className="flex flex-col">
+                                <Link
+                                  href={`/dashboard/stores/${encodeURIComponent(item["screen.storeLocation"])}`}
+                                  className="group/link inline-block w-fit"
+                                >
+                                  <div className="text-sm font-bold text-slate-700 group-hover/link:text-blue-600 transition-colors flex items-center gap-1">
+                                    {item["screen.storeLocation"]}
+                                    <svg
+                                      className="h-3 w-3 opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all text-blue-500"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M9 5l7 7-7 7"
+                                      />
+                                    </svg>
+                                  </div>
+                                </Link>
+                                <Link
+                                  href={`/dashboard/stores/${encodeURIComponent(item["screen.storeLocation"])}/sections/${encodeURIComponent(item["screen.storeSection"] || "Main Area")}`}
+                                  className="text-xs text-slate-500 hover:text-blue-500 hover:underline transition-colors block w-fit mt-0.5"
+                                >
+                                  {item["screen.storeSection"] || "Main Area"}
+                                </Link>
+                              </div>
+                            </td>
+                            <td className="px-6 py-4">
+                              <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600">
+                                <svg
+                                  className="h-3 w-3"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                  />
+                                </svg>
+                                {item["libraryItem.label"]}
+                              </div>
+                            </td>
+                            <td className="px-6 py-4">
+                              <div className="text-lg font-bold text-indigo-600">
+                                {item[todayKey] || "0"}
+                              </div>
+                            </td>
+                            <td className="px-6 py-4">
+                              <div className="text-lg font-bold text-blue-700">
+                                {item.Total}
+                              </div>
+                            </td>
+                          </tr>
+                        ))}
+                      </React.Fragment>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
@@ -405,7 +442,7 @@ export default function DashboardClient() {
               </div>
             )}
             <div className="border-t border-slate-100 bg-white px-6 py-4 text-xs text-slate-500 flex justify-between">
-              <span>Showing {filteredData.length} interaction loops</span>
+              <span>{Object.keys(groupedByProject).length} projects · {filteredData.length} items</span>
               <span suppressHydrationWarning>
                 Last synced: {new Date().toLocaleTimeString()}
               </span>

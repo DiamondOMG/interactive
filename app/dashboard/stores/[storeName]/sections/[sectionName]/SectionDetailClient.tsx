@@ -14,7 +14,7 @@ import {
 import { ArrowLeft, Box, Monitor, Package, Info, Calendar, Activity } from 'lucide-react';
 import Link from 'next/link';
 
-import { useStore } from '@/lib/store';
+import { useFilteredData } from '@/lib/store';
 
 export default function SectionDetailClient({ 
   storeName, 
@@ -23,7 +23,7 @@ export default function SectionDetailClient({
   storeName: string; 
   sectionName: string;
 }) {
-  const { liftData: data } = useStore();
+  const data = useFilteredData();
   const sectionData = useMemo(() => {
     return data.filter(item => 
       item["screen.storeLocation"] === storeName && 

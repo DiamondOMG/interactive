@@ -21,14 +21,14 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-import { useStore } from "@/lib/store";
+import { useFilteredData } from '@/lib/store';
 
 export default function StoreDetailClient({
   storeName,
 }: {
   storeName: string;
 }) {
-  const { liftData: data } = useStore();
+  const data = useFilteredData();
   const [selectedSection, setSelectedSection] = useState("all");
 
   const storeData = useMemo(() => {
