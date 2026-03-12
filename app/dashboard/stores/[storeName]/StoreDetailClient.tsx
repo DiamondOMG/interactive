@@ -21,26 +21,14 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-interface LiftData {
-  Total: string;
-  "screen.screen_name": string;
-  "libraryItem.label": string;
-  screenLabel: string;
-  "screen.storeLocation": string;
-  "screen.storeSection": string;
-  libraryItemId: string;
-  itemId: string;
-  screenId: string;
-  [key: string]: string; // Support for flattened displayCount_DATE
-}
+import { useStore } from "@/lib/store";
 
 export default function StoreDetailClient({
   storeName,
-  data,
 }: {
   storeName: string;
-  data: LiftData[];
 }) {
+  const { liftData: data } = useStore();
   const [selectedSection, setSelectedSection] = useState("all");
 
   const storeData = useMemo(() => {

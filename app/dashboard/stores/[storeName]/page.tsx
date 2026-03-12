@@ -1,37 +1,10 @@
 import StoreDetailClient from './StoreDetailClient';
 import Link from 'next/link';
 import { ShieldCheck, LayoutDashboard, BarChart3, Settings } from 'lucide-react';
-
-interface DisplayCounts {
-  [key: string]: string;
-}
-
-interface LiftData {
-  Total: string;
-  "screen.screen_name": string;
-  "libraryItem.label": string;
-  screenLabel: string;
-  "screen.storeLocation": string;
-  "screen.storeSection": string;
-  libraryItemId: string;
-  itemId: string;
-  screenId: string;
-  [key: string]: string; // Support for flattened displayCount_DATE
-}
+import { getLiftData } from '@/lib/api';
+import StoreInitializer from '@/components/StoreInitializer';
 
 export const revalidate = 600;
-
-async function getLiftData(): Promise<LiftData[]> {
-  const url = 'https://script.google.com/macros/s/AKfycbyZRJ4yoRWuvatmpEzZyc8hQFHdpfMHgPia7ZMN1gzLxByLL_rDo8CCr19qG8pgidGC/exec?action=getall';
-  try {
-    const res = await fetch(url, { next: { revalidate: 600 } });
-    if (!res.ok) throw new Error('API Error');
-    return res.json();
-  } catch (error) {
-    console.error(error);
-    return [];
-  }
-}
 
 export default async function StorePage({ params }: { params: Promise<{ storeName: string }> }) {
   const { storeName } = await params;
@@ -41,6 +14,7 @@ export default async function StorePage({ params }: { params: Promise<{ storeNam
 
   return (
     <div className="min-h-screen bg-[#f8fafc] flex">
+      <StoreInitializer data={data} />
       {/* Sidebar - Reusing styles for consistency */}
       <aside className="fixed left-0 top-0 hidden h-full w-64 border-r border-slate-200 bg-white p-6 lg:block">
         <div className="mb-10 flex items-center gap-3">
@@ -70,7 +44,7 @@ export default async function StorePage({ params }: { params: Promise<{ storeNam
       {/* Main Content */}
       <main className="flex-1 lg:pl-64">
         <div className="p-8 max-w-7xl mx-auto">
-          <StoreDetailClient storeName={decodedName} data={data} />
+          <StoreDetailClient storeName={decodedName} />
         </div>
       </main>
     </div>

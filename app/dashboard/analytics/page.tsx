@@ -2,24 +2,8 @@ import React from 'react';
 import AnalyticsClient from './AnalyticsClient';
 import Link from 'next/link';
 import { LayoutDashboard, BarChart3, Settings, ShieldCheck, ChevronLeft } from 'lucide-react';
-
-// Define types for the API response
-interface DisplayCounts {
-  [key: string]: string;
-}
-
-interface LiftData {
-  Total: string;
-  "screen.screen_name": string;
-  "libraryItem.label": string;
-  screenLabel: string;
-  "screen.storeLocation": string;
-  "screen.storeSection": string;
-  libraryItemId: string;
-  itemId: string;
-  screenId: string;
-  [key: string]: string; // Support for flattened displayCount_DATE
-}
+import { LiftData } from '@/lib/types';
+import StoreInitializer from '@/components/StoreInitializer';
 
 // ISR configuration: Revalidate every 10 minutes (matching user preference)
 export const revalidate = 600;
@@ -49,6 +33,7 @@ export default async function AnalyticsPage() {
 
   return (
     <div className="min-h-screen bg-[#f8fafc] font-sans text-slate-900 flex">
+      <StoreInitializer data={data} />
       {/* Sidebar */}
       <aside className="fixed left-0 top-0 hidden h-full w-64 border-r border-slate-200 bg-white p-6 lg:block shadow-sm">
         <div className="mb-10 flex items-center gap-3">
@@ -112,7 +97,7 @@ export default async function AnalyticsPage() {
 
         <div className="p-8 max-w-7xl mx-auto">
           {/* Main Visual Component */}
-          <AnalyticsClient data={data} />
+          <AnalyticsClient />
         </div>
       </main>
     </div>

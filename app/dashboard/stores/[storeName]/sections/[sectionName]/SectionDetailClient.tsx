@@ -14,28 +14,16 @@ import {
 import { ArrowLeft, Box, Monitor, Package, Info, Calendar, Activity } from 'lucide-react';
 import Link from 'next/link';
 
-interface LiftData {
-  Total: string;
-  "screen.screen_name": string;
-  "libraryItem.label": string;
-  screenLabel: string;
-  "screen.storeLocation": string;
-  "screen.storeSection": string;
-  libraryItemId: string;
-  itemId: string;
-  screenId: string;
-  [key: string]: string; // Support for flattened displayCount_DATE
-}
+import { useStore } from '@/lib/store';
 
 export default function SectionDetailClient({ 
   storeName, 
   sectionName,
-  data 
 }: { 
   storeName: string; 
   sectionName: string;
-  data: LiftData[] 
 }) {
+  const { liftData: data } = useStore();
   const sectionData = useMemo(() => {
     return data.filter(item => 
       item["screen.storeLocation"] === storeName && 

@@ -1,25 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useStore } from "@/lib/store";
+import { LiftData } from "@/lib/types";
 import Link from "next/link";
-
-// Define types for the API response
-interface DisplayCounts {
-  [key: string]: string;
-}
-
-interface LiftData {
-  Total: string;
-  "screen.screen_name": string;
-  "libraryItem.label": string;
-  screenLabel: string;
-  "screen.storeLocation": string;
-  "screen.storeSection": string;
-  libraryItemId: string;
-  itemId: string;
-  screenId: string;
-  [key: string]: string; // Support for flattened displayCount_DATE
-}
 
 // Section filter component
 function SectionFilter({
@@ -128,12 +111,14 @@ function StatCard({
   );
 }
 
-export default function DashboardClient({
-  initialData,
-}: {
-  initialData: LiftData[];
-}) {
-  const [selectedSection, setSelectedSection] = useState("all");
+export default function DashboardClient() {
+  const { 
+    liftData, 
+    selectedSection, 
+    setSelectedSection,
+    searchQuery,
+    setSearchQuery 
+  } = useStore();
 
   // Filter data based on selected section
   function hasAllFields(item: LiftData) {
@@ -148,7 +133,7 @@ export default function DashboardClient({
     );
   }
 
-  const filteredData = initialData.filter((item) => {
+  const filteredData = liftData.filter((item) => {
     // section match
     let sectionMatch = true;
     if (selectedSection === "main_area")
@@ -156,8 +141,15 @@ export default function DashboardClient({
     if (selectedSection === "shelf")
       sectionMatch = item["screen.storeSection"] === "Shelf";
 
+    // search match
+    const searchLower = searchQuery.toLowerCase();
+    const searchMatch = 
+      item.screenLabel?.toLowerCase().includes(searchLower) ||
+      item["screen.storeLocation"]?.toLowerCase().includes(searchLower) ||
+      item["libraryItem.label"]?.toLowerCase().includes(searchLower);
+
     // only include rows where all required fields are present
-    return sectionMatch && hasAllFields(item);
+    return sectionMatch && hasAllFields(item) && searchMatch;
   });
 
   // Calculations for Summary
@@ -386,6 +378,8 @@ export default function DashboardClient({
                 <input
                   type="text"
                   placeholder="Search contents or stores..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   className="rounded-lg border border-slate-200 bg-white px-4 py-1.5 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 w-64"
                 />
               </div>

@@ -14,24 +14,10 @@ import {
 } from 'recharts';
 import { TrendingUp, Package, MapPin, Monitor } from 'lucide-react';
 
-interface DisplayCounts {
-  [key: string]: string;
-}
+import { useStore } from '@/lib/store';
 
-interface LiftData {
-  Total: string;
-  "screen.screen_name": string;
-  "libraryItem.label": string;
-  screenLabel: string;
-  "screen.storeLocation": string;
-  "screen.storeSection": string;
-  libraryItemId: string;
-  itemId: string;
-  screenId: string;
-  [key: string]: string; // Support for flattened displayCount_DATE
-}
-
-export default function AnalyticsClient({ data }: { data: LiftData[] }) {
+export default function AnalyticsClient() {
+  const { liftData: data } = useStore();
   // Aggregate data by Library Item Label
   const chartData = useMemo(() => {
     const map = new Map<string, number>();
