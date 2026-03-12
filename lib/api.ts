@@ -1,20 +1,32 @@
 import { LiftData } from './types';
+import { getMergedLiftData } from './actions';
 
 export async function getLiftData(): Promise<LiftData[]> {
-  const url = 'https://script.google.com/macros/s/AKfycbyZRJ4yoRWuvatmpEzZyc8hQFHdpfMHgPia7ZMN1gzLxByLL_rDo8CCr19qG8pgidGC/exec?action=getall';
-  
   try {
-    const res = await fetch(url, {
-      next: { revalidate: 600 },
+    // เรียกใช้ Server Action โดยตรง (ไม่ต้องใช้ Absolute URL)
+    const rawData = await getMergedLiftData();
+    let data: LiftData[] = Array.isArray(rawData) ? rawData : [];
+
+    // --- Logic: Fill Zero สำหรับวันนี้ ---
+    const now = new Date();
+    const dd = String(now.getUTCDate()).padStart(2, '0');
+    const mm = String(now.getUTCMonth() + 1).padStart(2, '0');
+    const yyyy = now.getUTCFullYear();
+    const todayKey = `displayCount_${dd}/${mm}/${yyyy}`;
+
+    data = data.map((item) => {
+      if (!(todayKey in item)) {
+        return {
+          ...item,
+          [todayKey]: "0"
+        };
+      }
+      return item;
     });
     
-    if (!res.ok) {
-      throw new Error('Failed to fetch data from API');
-    }
-    
-    return res.json();
+    return data;
   } catch (error) {
-    console.error('Error fetching data:', error);
+    console.error('Error fetching data via server action:', error);
     return [];
   }
 }

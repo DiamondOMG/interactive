@@ -9,6 +9,7 @@
     "libraryItemId": "13FBA5FEE9A84D",
     "itemId": "13407BCEC1E915",
     "screenId": "78669DC50184",
+    "displayCount_11/03/2026": "0",
     "displayCount_10/03/2026": "9",
     "displayCount_09/03/2026": "17",
     "screen_item_id": "78669DC50184_13407BCEC1E915"
@@ -23,6 +24,7 @@
     "libraryItemId": "13FBDEF9B3CC76",
     "itemId": "13125F58ADB618",
     "screenId": "78669DC50184",
+    "displayCount_11/03/2026": "0",
     "displayCount_10/03/2026": "10",
     "displayCount_09/03/2026": "18",
     "screen_item_id": "78669DC50184_13125F58ADB618"
@@ -37,6 +39,7 @@
     "libraryItemId": "1301DA180B34AD",
     "itemId": "139CC26C77AB81",
     "screenId": "78669DC50184",
+    "displayCount_11/03/2026": "0",
     "displayCount_10/03/2026": "9",
     "displayCount_09/03/2026": "18",
     "screen_item_id": "78669DC50184_139CC26C77AB81"
@@ -51,7 +54,8 @@
     "libraryItemId": "133247C1D1A88D",
     "itemId": "136B6575319702",
     "screenId": "78669DC50184",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "17",
     "screen_item_id": "78669DC50184_136B6575319702"
   },
@@ -65,7 +69,8 @@
     "libraryItemId": "137E6670CF41B3",
     "itemId": "13ECB59BA098B9",
     "screenId": "78669DC50184",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "18",
     "screen_item_id": "78669DC50184_13ECB59BA098B9"
   },
@@ -79,7 +84,8 @@
     "libraryItemId": "030A9D9E39D961",
     "itemId": "132DC2BE507111",
     "screenId": "CC4B73A68E62",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "77",
     "screen_item_id": "CC4B73A68E62_132DC2BE507111"
   },
@@ -93,7 +99,8 @@
     "libraryItemId": "131685F1C3CDEA",
     "itemId": "13FA73256278B5",
     "screenId": "78669DC50184",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "17",
     "screen_item_id": "78669DC50184_13FA73256278B5"
   },
@@ -107,7 +114,8 @@
     "libraryItemId": "132EF5E2AFDC9C",
     "itemId": "13036007D5163D",
     "screenId": "78669DC50184",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "17",
     "screen_item_id": "78669DC50184_13036007D5163D"
   },
@@ -121,7 +129,8 @@
     "libraryItemId": "13E3BD20DC014E",
     "itemId": "138E724FA9D80B",
     "screenId": "145D348946F5",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "24",
     "screen_item_id": "145D348946F5_138E724FA9D80B"
   },
@@ -135,7 +144,8 @@
     "libraryItemId": "13E3BD20DC014E",
     "itemId": "138E724FA9D80B",
     "screenId": "145D34894A33",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "32",
     "screen_item_id": "145D34894A33_138E724FA9D80B"
   },
@@ -149,7 +159,8 @@
     "libraryItemId": "1302001DFDDA34",
     "itemId": "136C9B7906B365",
     "screenId": "145D348946F5",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "11",
     "screen_item_id": "145D348946F5_136C9B7906B365"
   },
@@ -163,7 +174,8 @@
     "libraryItemId": "1302001DFDDA34",
     "itemId": "136C9B7906B365",
     "screenId": "145D34894A33",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "19",
     "screen_item_id": "145D34894A33_136C9B7906B365"
   },
@@ -177,7 +189,8 @@
     "libraryItemId": "13A1C0C32DBD09",
     "itemId": "13E439ADFABE7F",
     "screenId": "145D348946F5",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "10",
     "screen_item_id": "145D348946F5_13E439ADFABE7F"
   },
@@ -191,7 +204,8 @@
     "libraryItemId": "13A1C0C32DBD09",
     "itemId": "13E439ADFABE7F",
     "screenId": "145D34894A33",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "19",
     "screen_item_id": "145D34894A33_13E439ADFABE7F"
   },
@@ -205,7 +219,8 @@
     "libraryItemId": "13D95A4725F5EB",
     "itemId": "13265F599693BB",
     "screenId": "78669DC50184",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "19",
     "screen_item_id": "78669DC50184_13265F599693BB"
   },
@@ -219,7 +234,8 @@
     "libraryItemId": "",
     "itemId": "030AE6B2517BC2",
     "screenId": "145D34894883",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "1",
     "screen_item_id": "145D34894883_030AE6B2517BC2"
   },
@@ -233,7 +249,8 @@
     "libraryItemId": "",
     "itemId": "030AE6B2517BC2",
     "screenId": "788A869F73B3",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "7",
     "screen_item_id": "788A869F73B3_030AE6B2517BC2"
   },
@@ -247,7 +264,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "039A702842D64B",
     "screenId": "788A869F73B3",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "14",
     "screen_item_id": "788A869F73B3_039A702842D64B"
   },
@@ -261,7 +279,8 @@
     "libraryItemId": "03AEB7ADFEF991",
     "itemId": "03B73E18244CE1",
     "screenId": "145D34894883",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "3",
     "screen_item_id": "145D34894883_03B73E18244CE1"
   },
@@ -275,7 +294,8 @@
     "libraryItemId": "03AEB7ADFEF991",
     "itemId": "03B73E18244CE1",
     "screenId": "788A869F73B3",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "99",
     "screen_item_id": "788A869F73B3_03B73E18244CE1"
   },
@@ -289,7 +309,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D348945B5",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "12",
     "screen_item_id": "145D348945B5_03FC6D639AB111"
   },
@@ -303,7 +324,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D348945CD",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "2",
     "screen_item_id": "145D348945CD_03FC6D639AB111"
   },
@@ -317,7 +339,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D348945D3",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "28",
     "screen_item_id": "145D348945D3_03FC6D639AB111"
   },
@@ -331,7 +354,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D348945D5",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "4",
     "screen_item_id": "145D348945D5_03FC6D639AB111"
   },
@@ -345,7 +369,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894605",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "3",
     "screen_item_id": "145D34894605_03FC6D639AB111"
   },
@@ -359,7 +384,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D3489460F",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "7",
     "screen_item_id": "145D3489460F_03FC6D639AB111"
   },
@@ -373,7 +399,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894665",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "12",
     "screen_item_id": "145D34894665_03FC6D639AB111"
   },
@@ -387,7 +414,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D3489469F",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "7",
     "screen_item_id": "145D3489469F_03FC6D639AB111"
   },
@@ -401,7 +429,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D348946A3",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "6",
     "screen_item_id": "145D348946A3_03FC6D639AB111"
   },
@@ -415,7 +444,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D348946BF",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "10",
     "screen_item_id": "145D348946BF_03FC6D639AB111"
   },
@@ -429,7 +459,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D348946C9",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "2",
     "screen_item_id": "145D348946C9_03FC6D639AB111"
   },
@@ -443,7 +474,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D348946EB",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "8",
     "screen_item_id": "145D348946EB_03FC6D639AB111"
   },
@@ -457,7 +489,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D348946F5",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "6",
     "screen_item_id": "145D348946F5_03FC6D639AB111"
   },
@@ -471,7 +504,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D348946FF",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "76",
     "screen_item_id": "145D348946FF_03FC6D639AB111"
   },
@@ -485,7 +519,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894705",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "4",
     "screen_item_id": "145D34894705_03FC6D639AB111"
   },
@@ -499,7 +534,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894749",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "7",
     "screen_item_id": "145D34894749_03FC6D639AB111"
   },
@@ -513,7 +549,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894757",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "6",
     "screen_item_id": "145D34894757_03FC6D639AB111"
   },
@@ -527,7 +564,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D3489478F",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "1",
     "screen_item_id": "145D3489478F_03FC6D639AB111"
   },
@@ -541,7 +579,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894795",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "3",
     "screen_item_id": "145D34894795_03FC6D639AB111"
   },
@@ -555,7 +594,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D3489479D",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "21",
     "screen_item_id": "145D3489479D_03FC6D639AB111"
   },
@@ -569,7 +609,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D3489479F",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "24",
     "screen_item_id": "145D3489479F_03FC6D639AB111"
   },
@@ -583,7 +624,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D348947C3",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "3",
     "screen_item_id": "145D348947C3_03FC6D639AB111"
   },
@@ -597,7 +639,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D348947FF",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "4",
     "screen_item_id": "145D348947FF_03FC6D639AB111"
   },
@@ -611,7 +654,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894867",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "83",
     "screen_item_id": "145D34894867_03FC6D639AB111"
   },
@@ -625,7 +669,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894881",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "12",
     "screen_item_id": "145D34894881_03FC6D639AB111"
   },
@@ -639,7 +684,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894883",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "11",
     "screen_item_id": "145D34894883_03FC6D639AB111"
   },
@@ -653,7 +699,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D348948E7",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "45",
     "screen_item_id": "145D348948E7_03FC6D639AB111"
   },
@@ -667,7 +714,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D348948FB",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "29",
     "screen_item_id": "145D348948FB_03FC6D639AB111"
   },
@@ -681,7 +729,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D3489492F",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "34",
     "screen_item_id": "145D3489492F_03FC6D639AB111"
   },
@@ -695,7 +744,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894941",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "4",
     "screen_item_id": "145D34894941_03FC6D639AB111"
   },
@@ -709,7 +759,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D3489494D",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "4",
     "screen_item_id": "145D3489494D_03FC6D639AB111"
   },
@@ -723,7 +774,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894965",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "3",
     "screen_item_id": "145D34894965_03FC6D639AB111"
   },
@@ -737,7 +789,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894985",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "3",
     "screen_item_id": "145D34894985_03FC6D639AB111"
   },
@@ -751,7 +804,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894993",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "15",
     "screen_item_id": "145D34894993_03FC6D639AB111"
   },
@@ -765,7 +819,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D348949A5",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "7",
     "screen_item_id": "145D348949A5_03FC6D639AB111"
   },
@@ -779,7 +834,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894A21",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "14",
     "screen_item_id": "145D34894A21_03FC6D639AB111"
   },
@@ -793,7 +849,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894A33",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "7",
     "screen_item_id": "145D34894A33_03FC6D639AB111"
   },
@@ -807,7 +864,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894AC7",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "18",
     "screen_item_id": "145D34894AC7_03FC6D639AB111"
   },
@@ -821,7 +879,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894ACD",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "1",
     "screen_item_id": "145D34894ACD_03FC6D639AB111"
   },
@@ -835,7 +894,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894ADB",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "2",
     "screen_item_id": "145D34894ADB_03FC6D639AB111"
   },
@@ -849,7 +909,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894AE9",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "10",
     "screen_item_id": "145D34894AE9_03FC6D639AB111"
   },
@@ -863,7 +924,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894B21",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "2",
     "screen_item_id": "145D34894B21_03FC6D639AB111"
   },
@@ -877,7 +939,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894B23",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "30",
     "screen_item_id": "145D34894B23_03FC6D639AB111"
   },
@@ -891,7 +954,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894B35",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "3",
     "screen_item_id": "145D34894B35_03FC6D639AB111"
   },
@@ -905,7 +969,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894B4D",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "3",
     "screen_item_id": "145D34894B4D_03FC6D639AB111"
   },
@@ -919,7 +984,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894B69",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "8",
     "screen_item_id": "145D34894B69_03FC6D639AB111"
   },
@@ -933,7 +999,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "145D34894B87",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "2",
     "screen_item_id": "145D34894B87_03FC6D639AB111"
   },
@@ -947,7 +1014,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "6C21A272CEC4",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "11",
     "screen_item_id": "6C21A272CEC4_03FC6D639AB111"
   },
@@ -961,7 +1029,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "FC23CDA737FA",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "3",
     "screen_item_id": "FC23CDA737FA_03FC6D639AB111"
   },
@@ -975,7 +1044,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "FC23CDA7383A",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "11",
     "screen_item_id": "FC23CDA7383A_03FC6D639AB111"
   },
@@ -989,7 +1059,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "FC23CDA73858",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "13",
     "screen_item_id": "FC23CDA73858_03FC6D639AB111"
   },
@@ -1003,7 +1074,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "FC23CDA73876",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "19",
     "screen_item_id": "FC23CDA73876_03FC6D639AB111"
   },
@@ -1017,7 +1089,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "FC23CDA738B8",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "3",
     "screen_item_id": "FC23CDA738B8_03FC6D639AB111"
   },
@@ -1031,7 +1104,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "FC23CDA73950",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "11",
     "screen_item_id": "FC23CDA73950_03FC6D639AB111"
   },
@@ -1045,7 +1119,8 @@
     "libraryItemId": "03E0EA11241DE7",
     "itemId": "03FC6D639AB111",
     "screenId": "FC23CDA739B2",
-    "displayCount_10/03/2026": "",
+    "displayCount_11/03/2026": "0",
+    "displayCount_10/03/2026": "0",
     "displayCount_09/03/2026": "8",
     "screen_item_id": "FC23CDA739B2_03FC6D639AB111"
   }
