@@ -26,7 +26,7 @@ export async function GET(request: NextRequest) {
         aggregation: "screen_and_item",
         groupId: "13908CF4A44ABA",
         fields:
-          "screen.screen_name,libraryItem.label,screenLabel,screen.storeLocation,libraryItemId,itemId,screenId,displayCount",
+          "screen.ProjectName,libraryItem.label,screenLabel,screen.storeLocation,libraryItemId,itemId,screenId,displayCount",
       },
     });
 

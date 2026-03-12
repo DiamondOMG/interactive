@@ -1,6 +1,6 @@
 export interface LiftData {
   Total: string;
-  "screen.screen_name": string;
+  "screen.ProjectName": string;
   "libraryItem.label": string;
   screenLabel: string;
   "screen.storeLocation": string;
