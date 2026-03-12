@@ -1,7 +1,6 @@
 import DashboardClient from "./DashboardClient";
-import StoreInitializer from "@/components/StoreInitializer";
 import { Metadata } from "next";
-import { getLiftData } from "@/lib/api";
+
 
 export const metadata: Metadata = {
   title: "Dashboard Overview | OMG Interactive",
@@ -10,13 +9,5 @@ export const metadata: Metadata = {
 
 // Server component
 export default async function DashboardPage() {
-  const rawData = await getLiftData();
-  const data = Array.isArray(rawData) ? rawData : [];
-
-  return (
-    <>
-      <StoreInitializer data={data} />
-      <DashboardClient />
-    </>
-  );
+  return <DashboardClient />;
 }

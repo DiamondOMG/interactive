@@ -1,9 +1,6 @@
-import React from 'react';
 import SectionDetailClient from './SectionDetailClient';
 import Link from 'next/link';
 import { ShieldCheck, LayoutDashboard, BarChart3 } from 'lucide-react';
-import { getLiftData } from '@/lib/api';
-import StoreInitializer from '@/components/StoreInitializer';
 import { Metadata } from 'next';
 
 export const revalidate = 600;
@@ -31,12 +28,8 @@ export default async function SectionPage({
   const decodedStore = decodeURIComponent(storeName);
   const decodedSection = decodeURIComponent(sectionName);
   
-  const rawData = await getLiftData();
-  const data = Array.isArray(rawData) ? rawData : [];
-
   return (
     <div className="min-h-screen bg-[#f8fafc] flex">
-      <StoreInitializer data={data} />
       {/* Sidebar */}
       <aside className="fixed left-0 top-0 hidden h-full w-64 border-r border-slate-200 bg-white p-6 lg:block">
         <div className="mb-10 flex items-center gap-3">

@@ -1,8 +1,6 @@
 import StoreDetailClient from './StoreDetailClient';
 import Link from 'next/link';
 import { ShieldCheck, LayoutDashboard, BarChart3, Settings } from 'lucide-react';
-import { getLiftData } from '@/lib/api';
-import StoreInitializer from '@/components/StoreInitializer';
 import { Metadata } from 'next';
 
 export const revalidate = 600;
@@ -19,12 +17,9 @@ export async function generateMetadata({ params }: { params: Promise<{ storeName
 export default async function StorePage({ params }: { params: Promise<{ storeName: string }> }) {
   const { storeName } = await params;
   const decodedName = decodeURIComponent(storeName);
-  const rawData = await getLiftData();
-  const data = Array.isArray(rawData) ? rawData : [];
 
   return (
     <div className="min-h-screen bg-[#f8fafc] flex">
-      <StoreInitializer data={data} />
       {/* Sidebar - Reusing styles for consistency */}
       <aside className="fixed left-0 top-0 hidden h-full w-64 border-r border-slate-200 bg-white p-6 lg:block">
         <div className="mb-10 flex items-center gap-3">

@@ -1,9 +1,7 @@
-import React from 'react';
 import AnalyticsClient from './AnalyticsClient';
 import Link from 'next/link';
 import { LayoutDashboard, BarChart3, Settings, ShieldCheck, ChevronLeft } from 'lucide-react';
 import { LiftData } from '@/lib/types';
-import StoreInitializer from '@/components/StoreInitializer';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -34,12 +32,8 @@ async function getLiftData(): Promise<LiftData[]> {
 }
 
 export default async function AnalyticsPage() {
-  const rawData = await getLiftData();
-  const data = Array.isArray(rawData) ? rawData : [];
-
   return (
     <div className="min-h-screen bg-[#f8fafc] font-sans text-slate-900 flex">
-      <StoreInitializer data={data} />
       {/* Sidebar */}
       <aside className="fixed left-0 top-0 hidden h-full w-64 border-r border-slate-200 bg-white p-6 lg:block shadow-sm">
         <div className="mb-10 flex items-center gap-3">
