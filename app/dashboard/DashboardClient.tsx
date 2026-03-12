@@ -220,33 +220,14 @@ export default function DashboardClient() {
               }
               trend="+12.5%"
               color="blue"
-            />
-            <StatCard
-              title="Unique Contents"
-              value={
-                <span suppressHydrationWarning>
-                  {uniqueContents.toLocaleString()}
-                </span>
-              }
-              description="Active library items in circulation"
-              icon={
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
-                />
-              }
-              color="indigo"
-            />
-            <StatCard
-              title="Active Locations"
+            /><StatCard
+              title="Stores"
               value={
                 <span suppressHydrationWarning>
                   {uniqueStores.toLocaleString()}
                 </span>
               }
-              description="Total store locations monitored"
+              description="Total store locations"
               icon={
                 <>
                   <path
@@ -266,13 +247,32 @@ export default function DashboardClient() {
               color="cyan"
             />
             <StatCard
-              title="Monitored Screens"
+              title="Unique Contents"
+              value={
+                <span suppressHydrationWarning>
+                  {uniqueContents.toLocaleString()}
+                </span>
+              }
+              description="Active library items in circulation"
+              icon={
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
+                />
+              }
+              color="indigo"
+            />
+            
+            <StatCard
+              title="Unique Screens"
               value={
                 <span suppressHydrationWarning>
                   {uniqueScreens.toLocaleString()}
                 </span>
               }
-              description="Individual kiosk units connected"
+              description="Total unique kiosk units"
               icon={
                 <path
                   strokeLinecap="round"
