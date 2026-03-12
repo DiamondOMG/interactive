@@ -29,42 +29,13 @@ export default function StoreDetailClient({
   storeName: string;
 }) {
   const data = useFilteredData();
-  const [selectedSection, setSelectedSection] = useState("all");
 
   const storeData = useMemo(() => {
-    const filteredByStore = data.filter(
+    return data.filter(
       (item) => item["screen.storeLocation"] === storeName,
     );
-
-    // Filter by section
-    if (selectedSection === "all") return filteredByStore;
-    if (selectedSection === "main_area")
-      return filteredByStore.filter(
-        (item) => !item["screen.storeSection"] || item["screen.storeSection"] === "",
-      );
-    if (selectedSection === "shelf")
-      return filteredByStore.filter((item) => item["screen.storeSection"] === "Shelf");
-    return filteredByStore;
-  }, [data, storeName, selectedSection]);
-
-  // Get available sections for this store
-  const availableSections = useMemo(() => {
-    const filteredByStore = data.filter(
-      (item) => item["screen.storeLocation"] === storeName,
-    );
-    const hasShelf = filteredByStore.some(
-      (item) => item["screen.storeSection"] === "Shelf",
-    );
-    const hasMainArea = filteredByStore.some(
-      (item) => !item["screen.storeSection"] || item["screen.storeSection"] === "",
-    );
-
-    return [
-      { id: "all", label: "All Sections" },
-      ...(hasMainArea ? [{ id: "main_area", label: "Main Area" }] : []),
-      ...(hasShelf ? [{ id: "shelf", label: "Shelf" }] : []),
-    ];
   }, [data, storeName]);
+
 
   const stats = useMemo(() => {
     const totalLifts = storeData.reduce(
@@ -134,15 +105,6 @@ export default function StoreDetailClient({
               </h1>
               <p className="text-slate-500 flex items-center gap-1.5 text-sm">
                 <Monitor className="h-3.5 w-3.5" />
-                {selectedSection !== "all" && (
-                  <span className="text-indigo-600 font-medium">
-                    {
-                      availableSections.find((s) => s.id === selectedSection)
-                        ?.label
-                    }{" "}
-                    •
-                  </span>
-                )}
                 {stats.uniqueScreens} active kiosks in this branch
               </p>
             </div>
@@ -158,34 +120,6 @@ export default function StoreDetailClient({
         </div>
       </div>
 
-      {/* Section Filter */}
-      <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-        <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2 mb-4">
-          <Package className="h-5 w-5 text-indigo-600" />
-          Store Sections
-        </h3>
-        <div className="flex flex-wrap gap-2">
-          {availableSections.map((section) => (
-            <Link
-              key={section.id}
-              href={
-                section.id === "all"
-                  ? `/dashboard/stores/${encodeURIComponent(storeName)}`
-                  : `/dashboard/stores/${encodeURIComponent(
-                      storeName,
-                    )}/sections/${encodeURIComponent(section.label)}`
-              }
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
-                selectedSection === section.id
-                  ? "bg-indigo-600 text-white shadow-sm"
-                  : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
-              }`}
-            >
-              {section.label}
-            </Link>
-          ))}
-        </div>
-      </div>
 
       {/* Grid Summary */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -4,8 +4,6 @@ import { LiftData } from './types';
 interface GlobalState {
   liftData: LiftData[];
   setLiftData: (data: LiftData[]) => void;
-  selectedSection: string;
-  setSelectedSection: (section: string) => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
 }
@@ -13,8 +11,6 @@ interface GlobalState {
 export const useStore = create<GlobalState>((set) => ({
   liftData: [],
   setLiftData: (data) => set({ liftData: data }),
-  selectedSection: 'all',
-  setSelectedSection: (section) => set({ selectedSection: section }),
   searchQuery: '',
   setSearchQuery: (query) => set({ searchQuery: query }),
 }));
@@ -34,16 +30,9 @@ function hasAllFields(item: LiftData): boolean {
 
 /** Hook สำหรับดึง filteredData — ใช้ได้ทุกหน้า */
 export function useFilteredData(): LiftData[] {
-  const { liftData, selectedSection, searchQuery } = useStore();
+  const { liftData, searchQuery } = useStore();
 
   return liftData.filter((item) => {
-    // section match
-    let sectionMatch = true;
-    if (selectedSection === "main_area")
-      sectionMatch = !item["screen.storeSection"] || item["screen.storeSection"] === "";
-    if (selectedSection === "shelf")
-      sectionMatch = item["screen.storeSection"] === "Shelf";
-
     // search match
     const searchLower = searchQuery.toLowerCase();
     const searchMatch =
@@ -51,6 +40,6 @@ export function useFilteredData(): LiftData[] {
       item["screen.storeLocation"]?.toLowerCase().includes(searchLower) ||
       item["libraryItem.label"]?.toLowerCase().includes(searchLower);
 
-    return sectionMatch && hasAllFields(item) && searchMatch;
+    return hasAllFields(item) && searchMatch;
   });
 }

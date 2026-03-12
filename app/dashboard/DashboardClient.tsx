@@ -6,12 +6,9 @@ import { LiftData } from "@/lib/types";
 import Link from "next/link";
 
 import StatCard from "@/components/dashboard/StatCard";
-import SectionFilter from "@/components/dashboard/SectionFilter";
 
 export default function DashboardClient() {
   const { 
-    selectedSection, 
-    setSelectedSection,
     searchQuery,
     setSearchQuery 
   } = useStore();
@@ -192,13 +189,6 @@ export default function DashboardClient() {
         </header>
 
         <div className="p-8">
-          {/* Section Filter */}
-          <div className="mb-6">
-            <SectionFilter
-              currentSection={selectedSection}
-              onSectionChange={setSelectedSection}
-            />
-          </div>
 
           {/* Summary Stats */}
           <div className="mb-10 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
@@ -410,12 +400,9 @@ export default function DashboardClient() {
                                     </svg>
                                   </div>
                                 </Link>
-                                <Link
-                                  href={`/dashboard/stores/${encodeURIComponent(item["screen.storeLocation"])}/sections/${encodeURIComponent(item["screen.storeSection"] || "Main Area")}`}
-                                  className="text-xs text-slate-500 hover:text-blue-500 hover:underline transition-colors block w-fit mt-0.5"
-                                >
-                                  {item["screen.storeSection"] || "Main Area"}
-                                </Link>
+                                 <div className="text-xs text-slate-500 mt-0.5">
+                                   {item["screen.storeSection"] || "Main Area"}
+                                 </div>
                               </div>
                             </td>
                             <td className="px-6 py-4">
